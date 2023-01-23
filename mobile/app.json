@@ -24,10 +24,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.github.fdanielarruda",
+      "versionCode": 1
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "extra": {
+      "eas": {
+        "projectId": "052ff92a-79d2-4a73-a406-1ed25a879101"
+      }
     }
+  },
+  "web": {
+    "favicon": "./assets/favicon.png"
   }
 }
