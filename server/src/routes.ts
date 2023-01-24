@@ -77,7 +77,7 @@ export async function appRoutes(app: FastifyInstance) {
         }
     })
 
-    // completar uma atividade
+    // marcar uma atividade como completa ou desmarcar
     app.patch('/habits/:id/toggle', async (request) => {
         const toggleHabitParams = z.object({
             id: z.string().uuid()
@@ -148,6 +148,9 @@ export async function appRoutes(app: FastifyInstance) {
                     JOIN habits H
                         ON H.id = HDW.habit_id
                     WHERE
+                        -- strftime converte em milisegundos desde o dia 0. 
+                        -- %w é o dia da semana.
+                        -- unixepoch (era unix, teve inicio em 1970)
                         HDW.week_day = cast(strftime('%w', D.date/1000.0, 'unixepoch') as int)
                         AND H.created_at <= D.date
                 ) as amount
