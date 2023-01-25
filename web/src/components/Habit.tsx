@@ -1,11 +1,11 @@
-interface HabitProp {
+interface HabitProps {
     completed: number
 }
 
-export function Habit(prop: HabitProp) {
+export function Habit(props: HabitProps) {
     return (
         <div className="bg-zinc-900 w-10 h-10 text-white rounded m-2 flex items-center justify-center">
-            {prop.completed}
+            {props.completed}
         </div>
     );
 }

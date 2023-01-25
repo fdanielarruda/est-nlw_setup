@@ -1,17 +1,10 @@
 import { Plus, X } from "phosphor-react";
 import * as Dialog from '@radix-ui/react-dialog';
-import { useState } from "react";
 
 import LogoImage from '../assets/logo.svg'
 import { NewHabitForm } from "./NewHabitForm";
 
 export function Header() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    function buttonClicked() {
-        setIsModalOpen(true);
-    }
-
     return (
         <div className="w-full max-w-3xl mx-auto flex items-center justify-between">
             <img src={LogoImage} alt="" />
@@ -40,7 +33,6 @@ export function Header() {
                         <NewHabitForm />
                     </Dialog.Content>
                 </Dialog.Portal>
-
             </Dialog.Root>
         </div>
     );

@@ -16,7 +16,7 @@ export async function appRoutes(app: FastifyInstance) {
 
         const { title, weekDays } = createHabitBody.parse(request.body)
 
-        // Exibe a data com a hora zerada
+        // Retorna a data com a hora zerada
         const today = dayjs().startOf('day').toDate()
 
         await prisma.habit.create({
